@@ -2,18 +2,37 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href= "./login.css"> </href>
+    <link rel="stylesheet" href="./login.css">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
-    <title> login page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <script>
+        function loginUser() {
+
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            var correctUsername = "Test@gmail.com";
+            var correctPassword = "Test@1234";
+
+            if (username === correctUsername && password === correctPassword) {
+                window.location.href = "../project1.html";
+            } else {
+                alert("Invalid username or password. Please try again.");
+            }
+        }
+    </script>
 </head>
 
 <body>
- <div class="bg-outer">
-    <h1> Login </h1><br>
-    <input type="text" id="username" name="username" size="30" ><br><br>
-    <input type="text" id ="emailid" name="emailid" size="30"><br> <br> <br>
-    <input type="submit" id="submit" name="submit" ><br><br>
- </div>
+    <div class="bg-outer">
+        <h1>Login</h1><br>
+        <form id="loginForm" onsubmit="return false;">
+            <input type="text" id="username" name="username" placeholder="Username" size="30"><br><br>
+            <input type="password" id="password" name="password" placeholder="Password" size="30"><br><br>
+            <input type="button" id="submit" name="submit" value="Login" onclick="loginUser();"><br><br>
+        </form>
+    </div>
 </body>
+
 </html>
